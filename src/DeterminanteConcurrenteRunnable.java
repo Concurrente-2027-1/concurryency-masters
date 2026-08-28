@@ -1,8 +1,6 @@
 /*	Programa 1: Programa para obtener el determinante de una matriz de 3x3con Runnable
 */
 
-import ProgramasPractica1.practica1.DeterminanteConcurrente;
-
 public class DeterminanteConcurrenteRunnable implements Runnable{
     static int determinante;
     static int n_prueba = 3;

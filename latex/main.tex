@@ -19,7 +19,7 @@
 
 \author{
     Martínez Mejía Eduardo \\
-    Victoria Morales Ricardo Maximiliano
+    a
 }
 
 \date{27 de Agosto de 2026}
@@ -100,20 +100,37 @@ De aquí partimos para crear un thread para cada runnable y comenzar la ejecuci�
 
 \subsection*{6. Implementa del programa \textit{Determinante} concurrente para dos hilos (en vez de seis).}
 
-a
-\\
+El código fuente es el del archivo \textit{DeterminanteConcurrenteDosHilos.java.} 
+
+\begin{enumerate}
+    \item Nos basamos en el archivo que tenía 6 hilos.
+
+    \item Dividimos el trabajo de cálculo en 2 hilos, ahora cada hilo iba a trabajar con 9 operandos. Dividimos la resta final del cálculo del determinante en dos pasos. Cada hilo ahora sólo multiplica sus 9 parámetros.
+
+    \item Finalmente se resta el producto de cada hilo para obtener el determinante. 
+\end{enumerate}
 
 
-\subsection*{7. Compara las 3 implementaciones: el programa \textit{Determinante} concurrente para dos hilos, para seis hilos y el programa secuencial. Responde: ¿A qué se debe el orden en el que se ordenan los
+\subsection*{7. Compara las 3 implementaciones: el programa \textit{Determinante} concurrente para dos hilos, para seis hilos y el programa secuencial. 
+\\ Responde: ¿A qué se debe el orden en el que se ordenan los
 tiempos de ejecución de cada programa?}
 
-a
+Los tiempos de ejecución de las diferentes versiones del programa resultaron ser, de mayor a menor las siguientes:
+\begin{itemize}
+    \item Secuencial
+    \item Concurrente de 2 hilos
+    \item Concurrente de 6 hilos
+\end{itemize}
+
+\includegraphics[width=16cm]{imagenes/TiemposDeterminantes.png}
+
+Analizando el algoritmo base nos podemos dar cuenta de que realmente el calcular la determinante de una matriz $3x3$ requiere de pocas operaciones, por lo que podemos pensar que el aumento de tiempo de ejecución que observamos se debe al costo de la creación e inicialización  de cada hilo, lo que agrega tiempo extra, por lo que mientras más hilos, más tiempo tomamos. Podemos entonces ver que en este problema específico no ganamos velocidad real en la práctica.
 \\
 
 
 \subsection*{8. Si utilizas la Ley de Amdahl entre el programa \textit{Determinante} concurrente para dos hilos y el programa secuencial. ¿El resultado es mayor o menor a 1? ¿Por qué?.}
 
-a
+Al ejecutar el programa secuencial, éste tardo $a=3501 ns$, y al ejecutar el de dos hilos tardó $b=896995 ns$. Es decir, $a/b$ es menor a 1. Por lo tanto, no hay aceleración con dos hilos que con secuencial. Esto probablemente se debe a que estos cálculos son muy simples y rápidos para un procesador normal, y tarda menos que todo el proceso de crear hilos.
 \\
 
 
