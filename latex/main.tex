@@ -19,7 +19,8 @@
 
 \author{
     Martínez Mejía Eduardo \\
-    Victoria Morales Ricardo Maximiliano
+    Victoria Morales Ricardo Maximiliano \\
+    Torres Nava Hazel
 }
 
 \date{27 de Agosto de 2026}
@@ -100,7 +101,17 @@ De aquí partimos para crear un thread para cada runnable y comenzar la ejecuci�
 
 \subsection*{6. Implementa del programa \textit{Determinante} concurrente para dos hilos (en vez de seis).}
 
-a
+El código fuente es el del archivo DeterminanteConcurrenteDosHilos.java. 
+
+\begin{enumerate}
+    \item Nos basamos en el archivo que tenía 6 hilos.
+
+    \item Dividimos el trabajo de cálculo en 2 hilos, ahora cada hilo iba a trabajar con 9 operandos. Dividimos la resta final del cálculo del determinante en dos pasos. Cada hilo ahora sólo multiplica sus 9 parámetros.
+
+    \item Finalmente se resta el producto de cada hilo para obtener el determinante. 
+\end{enumerate}
+
+
 \\
 
 
