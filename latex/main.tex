@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{url}
+
+\setlength{\droptitle}{-4em}  
+\setlength{\parindent}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.8in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0pt}
+
+\title{Computación Concurrente. Práctica 1.}
+
+\author{
+    Martínez Mejía Eduardo \\
+    a
+}
+
+\date{27 de Agosto de 2026}
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.5cm}
+
+\subsection*{1. https://www.evanjones.ca/software/threading-linus-msg.html.\\
+Comparte
+en máximo 4 líneas de computadora a qué se refiere Linus Torvalds con un contexto de ejecución
+y cómo se relaciona con la definición en la sección 1 de esta práctica.}
+
+Es un conjunto de estados de la computadora asociados a una tarea. Verlo así permite dejar de ver sólo hilos y procesos  como varios caminos bifurcados actuando sobre un mismo plan, sino ver módulos con datos propios que pueden manejar y compartir según se requiera, sin la limitación de depender completamente de un padre, teniendo total libertad de ejecución.
+\\
+
+
+\subsection*{2. ¿Cuántos hilos tiene disponibles tu computadora?\\
+Ejecuta \textit{Runtime.getRuntime().availableProcessors()}, si son más de uno en el equipo escriban el
+de cada uno.}
+
+\begin{itemize}
+    \item \textbf{Eduardo}: 
+        \\ \includegraphics[width=15cm]{imagenes/EduardoP2.png}
+    
+    \item 
+    
+    \item \textbf{Hazel}: 
+        \\ \includegraphics[width=5cm]{imagenes/Hazel_1.png}
+    
+\end{itemize}
+\\
+
+
+\subsection*{3. Revisa el programa \textit{Determinante} concurrente y responde ¿Cuánto tiempo tarda en ejecutarse?.}
+
+\begin{itemize}
+    \item \textbf{Eduardo}: \\\includegraphics[width=16cm]{imagenes/EduardoP3.png}
+    
+    \item 
+    
+    \item \textbf{Hazel}: 
+        \\ \includegraphics[width=7cm]{imagenes/Hazel_2.png}
+\end{itemize}
+\\
+
+
+\subsection*{4. El programa \textit{Determinante} concurrente está implementado extendiendo la clase \textit{Thread}. Implementa
+el programa utilizando la interfaz \textit{Runnable}.}
+
+Partiendo del programa \textit{Determinante}, cambiamos la definición de la clase para que implemente \textit{Runnable}, cambiando su nombre a  \textit{DeterminanteConcurrenteRunnable} para distinguirla.
+\\
+Como cada hilo que necesitamos para dividir cada conjunto de multiplicaciones a  efectuar al aplicar la regla de \textit{Sarrus}, debemos crear los objetos runnable necesarios, en este caso son 6 al ser una matriz $3x3$, con lo que le podemos pasar a cada uno los valores de la matriz con los que debe operar.
+\\
+De aquí partimos para crear un thread para cada runnable y comenzar la ejecución, siguendo exactamente las mismas instrucciones que cuando se decidió extender \textit{Thread}.
+
+
+\\
+
+
+\subsection*{5. Implementa el programa \textit{Determinante} concurrente de forma secuencial.}
+\includegraphics[width=10cm]{imagenes/DeterminanteSec.png}
+\begin{enumerate}
+    \item Para calcular el determinante de una matriz 3x3, primero calculamos el producto de las tres diagonales principles
+
+    \item posteriormente, calculamos las diagonales secundarias 
+
+    \item Tomamos los primeros tres resultados y los sumamos
+
+    \item Y por ultimo, a esa suma le restamos los ultimos tres resultados
+\end{enumerate}
+\\
+
+
+\subsection*{6. Implementa del programa \textit{Determinante} concurrente para dos hilos (en vez de seis).}
+
+a
+\\
+
+
+\subsection*{7. Compara las 3 implementaciones: el programa \textit{Determinante} concurrente para dos hilos, para seis hilos y el programa secuencial. Responde: ¿A qué se debe el orden en el que se ordenan los
+tiempos de ejecución de cada programa?}
+
+a
+\\
+
+
+\subsection*{8. Si utilizas la Ley de Amdahl entre el programa \textit{Determinante} concurrente para dos hilos y el programa secuencial. ¿El resultado es mayor o menor a 1? ¿Por qué?.}
+
+a
+\\
+
+
+\subsection*{9. Describe con tus propias palabras en máximo dos líneas para qué sirve el método \textit{join()}. Si no
+utilizas el método \textit{join()} en \textit{Determinante Concurrente}, ¿sigue funcionando?}
+
+Detiene al hilo principal para que los hilos a los que llama terminen su trabajo antes de continuar, siendo útil para juntar sus resultados.
+\\
+\\
+Si se comentan todos los \textit{join()} deja de funcionar y el resultado arroja 0, pues cada hilo termina después del principal \textit{determinanteMatriz3x3}, y al instante se suman los valores \textit{partial} de cada hilo, que se inicializaron en 0. 
+\\
+
+
+\end{document}
+
