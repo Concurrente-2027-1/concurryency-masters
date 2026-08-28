@@ -8,5 +8,5 @@ Se ubica en la ruta [`latex/main.pdf`](latex/main.pdf) o dando [click acá](late
 ## Programas
 Se encuentran en la carpeta src:
 - Ejercicio 4 - [DeterminanteConcurrenteRunnable.java](src/DeterminanteConcurrenteRunnable.java)
-- Ejercicio 5 - [DeterminanteSecuencial.java](DeterminanteSecuencial.java)
-- Ejercicio 6 - [DeterminanteConcurrenteDosHilos.java](DeterminanteConcurrenteDosHilos.java)
+- Ejercicio 5 - [DeterminanteSecuencial.java](src/DeterminanteSecuencial.java)
+- Ejercicio 6 - [DeterminanteConcurrenteDosHilos.java](src/DeterminanteConcurrenteDosHilos.java)
