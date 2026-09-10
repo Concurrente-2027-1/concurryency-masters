@@ -1,8 +1,5 @@
-# ConCURRYency-Masters
-## Integrantes
-- Martínez Mejía Eduardo
-- Torres Nava Hazel
-- Victoria Morales Ricardo Maximiliano
+# Práctica 1
+
 ## Reporte PDF
 Se ubica en la ruta [`latex/main.pdf`](latex/main.pdf) o dando [click acá](latex/main.pdf). 
 ## Programas
