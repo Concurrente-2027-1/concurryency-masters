@@ -102,7 +102,10 @@ De aquí partimos para crear un thread para cada runnable y comenzar la ejecuci�
 \subsection*{6. Implementa del programa \textit{Determinante} concurrente para dos hilos (en vez de seis).}
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 67e3870 (update: pdf)
 El código fuente es el del archivo \textit{DeterminanteConcurrenteDosHilos.java.} 
 
 \begin{enumerate}
@@ -133,7 +136,9 @@ Analizando el algoritmo base nos podemos dar cuenta de que realmente el calcular
 
 \subsection*{8. Si utilizas la Ley de Amdahl entre el programa \textit{Determinante} concurrente para dos hilos y el programa secuencial. ¿El resultado es mayor o menor a 1? ¿Por qué?.}
 
+
 Al ejecutar el programa secuencial, éste tardo $a=3501 ns$, y al ejecutar el de dos hilos tardó $b=896995 ns$. Es decir, $a/b$ es menor a 1. Por lo tanto, no hay aceleración con dos hilos que con secuencial. Esto probablemente se debe a que estos cálculos son muy simples y rápidos para un procesador normal, y tarda menos que todo el proceso de crear hilos.
+
 
 \subsection*{9. Describe con tus propias palabras en máximo dos líneas para qué sirve el método \textit{join()}. Si no
 utilizas el método \textit{join()} en \textit{Determinante Concurrente}, ¿sigue funcionando?}
