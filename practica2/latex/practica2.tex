@@ -3,11 +3,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
 \usepackage[T1]{fontenc}
-\usepackage{titling}
 \usepackage{graphicx}
 \usepackage{url}
 
-\setlength{\droptitle}{-4em}  
 \setlength{\parindent}{0in}
 \setlength{\oddsidemargin}{0in}
 \setlength{\textwidth}{6.5in}
@@ -30,6 +28,31 @@
 \maketitle
 
 \vspace{0.5cm}
+
+
+\section*{5. En una pool de hilos (\textit{ExecutorService}), ¿si utilizamos más hilos equivale a un mayor throughput? Argumenta por qué.}
+
+La respuesta general es una gran ``depende'', ya que al parecer tiene mucho que ver el tipo de tarea a realizar. Sin embargo, indagando un poco más, parece que la respuesta es que \textbf{no necesariamente}. Un mayor número de hilos no equivale automáticamente a un mayor \textit{throughput} (rendimiento o procesamiento de datos), y de hecho, puede llegar a disminuirlo.
+
+Esto se debe a que la CPU debe guardar el estado del hilo actual y cargar el del siguiente, por lo que, si hay miles de hilos compitiendo por los recursos, la CPU puede llegar a gastar más tiempo administrando y cambiando entre hilos que ejecutando el código de las tareas. Este proceso se conoce como \textit{context switching} o cambio de contexto.
+
+Otro factor importante es el consumo de memoria, ya que cada hilo en Java reserva su propio espacio de memoria. Por lo tanto, crear demasiados hilos puede provocar un consumo excesivo de memoria e incluso ocasionar un error de tipo \texttt{OutOfMemoryError}.
+
+Por lo tanto, aumentar el número de hilos no garantiza un mayor \textit{throughput}. Lo ideal es encontrar una cantidad de hilos adecuada dependiendo del tipo de tarea, los recursos disponibles y la cantidad de núcleos del procesador.
+
+\vspace{0.5cm}
+
+\section*{Fuentes}
+
+\begin{itemize}
+    \item Go Komura, ``Buenas prácticas de multithreading en la práctica --- Edición Java: el estándar en la era de los hilos virtuales,'' KomuraSoft LLC, Aug. 2026, doi: 10.5281/zenodo.22175924.
+
+    \item Stack Overflow en español. ``Threads: ¿Por qué tener más hilos es mejor?'' 
+    \url{https://es.stackoverflow.com/questions/4921/threads-por-qu%C3%A9-tener-m%C3%A1s-hilos-es-mejor}
+
+    \item Stack Overflow. ``How to determine coreThreadSize if having multiple threadpools in application?''
+    \url{https://stackoverflow.com/questions/76684733/how-to-determine-corethreadsize-if-having-multiple-threadpools-in-application}
+\end{itemize}
 
 
 
