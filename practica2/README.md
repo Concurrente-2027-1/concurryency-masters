@@ -16,6 +16,11 @@ Ejecutar en la ruta del archivo con:
     javac ColaConcurrente.java
     java ColaConcurrente
     ```
-- El programa del ejercicio 4 es el mismo del programa del ejercicio 1, sólamente que colocando la palabra synchronized a los métodos enq(), deq() y print().
+- El programa del ejercicio 4 es el mismo del programa del ejercicio 1, sólamente que colocando la palabra synchronized a los métodos enq(), deq() y print(). Y es el archivo [src/ColaConcurrenteNumerosSynchronized.java](src/ColaConcurrenteNumerosSynchronized.java). 
+Se ejecuta de la Siguiente manera:
+    ```
+    javac ColaConcurrenteNumerosSynchronized.java
+    java ColaConcurrenteNumerosSynchronized
+    ```
 
 - El pdf de la práctica se encuentra en [latex/practica2.pdf](latex/practica2.pdf)
