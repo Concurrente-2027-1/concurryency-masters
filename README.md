@@ -16,4 +16,5 @@ Se encuentran en la carpeta src:
 - Ejercicio 6 - [DeterminanteConcurrenteDosHilos.java](practica1/src/DeterminanteConcurrenteDosHilos.java)
 
 ## Práctica 2
-
+Los programas se encuentran en la carpeta  [`practica2/src`](practica2/src).
+Ver instrucciones en el README de la práctica 2 que se encuentra en [`practica2/README.md`](practica2/README.md).
