@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ColaConcurrente {
+public class ColaConcurrenteNumeros {
 
     public class Nodo {
 	    public String item;
@@ -19,7 +19,7 @@ public class ColaConcurrente {
     private Nodo head;
 	private Nodo tail;
 
-	public ColaConcurrente() {
+	public ColaConcurrenteNumeros() {
 		this.head  = new Nodo("hnull");
 	    this.tail  = new Nodo("tnull");
 	    this.head.next = this.tail;
@@ -72,47 +72,21 @@ public class ColaConcurrente {
         List<Future<String>> futures = new ArrayList<Future<String>>();
 
         // Creamos una pool de 4 hilos
-        ExecutorService executor = Executors.newFixedThreadPool(20);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
 
         // La cola para hacer pruebas 
-        ColaConcurrente cola = new ColaConcurrente();
+        ColaConcurrenteNumeros cola = new ColaConcurrenteNumeros();
 
-
-        // Asignamos un Future a la tarea del hilo que encolará/meterá "a" en la cola
-        Future<String> fut1 = executor.submit(()->cola.enq("a"));  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut1);
-        
-        // Asignamos un Future a la tarea del hilo que encolará/meterá "b" en la cola
-        Future<String> fut2 = executor.submit(()->cola.enq("b"));  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut2);
-        
-        // Asignamos un Future a la tarea del hilo que encolará/meterá "c" en la cola
-        Future<String> fut3 = executor.submit(()->cola.enq("c"));  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut3);
-        
-        // Asignamos un Future a la tarea del hilo que encolará/meterá "d" en la cola
-        Future<String> fut4 = executor.submit(()->cola.enq("d"));  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut4);
-        
-        // Asignamos un Future a la tarea del hilo que encolará/meterá "e" en la cola
-        Future<String> fut5 = executor.submit(()->cola.enq("e"));  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut5);
-        
+                
+        for(int i=0; i<100; i++){
+            final int valorActual = i;
+            futures.add(executor.submit(()->cola.enq(valorActual+"")));
+        }
         
         // Asignamos un Future a la tarea del hilo que desencolará de la cola
-        Future<String> fut6 = executor.submit(()->cola.deq());  
+        //Future<String> fut2 = executor.submit(()->cola.deq());  
         // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut6);
-        
-        // Asignamos un Future a la tarea del hilo que desencolará de la cola
-        Future<String> fut7 = executor.submit(()->cola.deq());  
-        // Guardamos el Future en la lista de Futures de Encolar
-        futures.add(fut7);
+        //futures.add(fut7);
 
 
         // Hacemos que los hilos ya no se apunten a nuevas tareas, por si las moscas
@@ -120,12 +94,12 @@ public class ColaConcurrente {
 
 
         /** 
-            La lista de Futures es para obtener como el orden en el que se ejecutaron 
-            los hilos.
+            Impresión de los resultados de los Future de la lista de Future en el 
+            orden en el que se asignaron las tareas
         **/ 
         System.out.println("Imprimiremos a los resultados de los hilos según el " + 
                             "orden en el que se asignaron a sus tareas, pero el " +
-                            "contenido de la impresión mostrará el verdadero orden " + 
+                            "contenido de la impresión de la cola mostrará el verdadero orden " + 
                             "en el que se ejecutaron los hilos."
         );
 
