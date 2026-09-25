@@ -1,4 +1,3 @@
-package unam.fc.concurrent.practica3;
 //Programa 2: Programa que ejemplifica el problema de  Reordenamiento en el JMM
 // Si no se utiliza volatile, entonces las lineas 15 a 18 se reordenan y el resultado de a y b es distinto
 // Implica que volatile forza al compilador a no reordenar las instrucciones

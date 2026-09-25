@@ -1,5 +1,3 @@
-package unam.fc.concurrent.practica3;
-
 public class VolatileStressTest {
     // Variables compartidas SIN volatile para inducir fallos de visibilidad y reordenamiento
     static int a = 0;

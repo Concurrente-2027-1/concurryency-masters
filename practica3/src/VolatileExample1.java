@@ -1,4 +1,3 @@
-package unam.fc.concurrent.practica3;
 //Programa 1: Programa que ejemplifica el problema de Visibilidad en el JMM 
 // Si la variable flag no es volatile, entonces el hilo que ejecuta read() puede nunca leer que el 
 //  hilo que ejecuta write() modifico flag

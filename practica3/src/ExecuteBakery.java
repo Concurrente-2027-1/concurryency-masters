@@ -1,5 +1,3 @@
-package unam.fc.concurrent.practica3;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 //Programa 4: Programa que ejecuta la clase Lamport's Bakery

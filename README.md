@@ -18,3 +18,7 @@ Se encuentran en la carpeta src:
 ## Práctica 2
 Los programas se encuentran en la carpeta  [`practica2/src`](practica2/src).
 Ver instrucciones en el README de la práctica 2 que se encuentra en [`practica2/README.md`](practica2/README.md).
+
+## Práctica 2
+Los programas se encuentran en la carpeta  [`practica3/src`](practica3/src).
+Ver instrucciones en el README de la práctica 3 que se encuentra en [`practica3/README.md`](practica3/README.md).

@@ -1,8 +1,5 @@
-package unam.fc.concurrent.practica3;
 import java.util.concurrent.atomic.*;
 //Programa 5: Lamport's algorithm Unbounded
-
-import unam.fc.concurrent.practica3.Nodo;
 
 public class Bakery {
 	private Nodo head;

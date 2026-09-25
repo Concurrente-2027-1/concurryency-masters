@@ -1,5 +1,3 @@
-package unam.fc.concurrent.practica3;
-
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Nodo {
