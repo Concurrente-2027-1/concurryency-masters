@@ -11,6 +11,7 @@ Ejecutar en la ruta del archivo con:
     javac DoublePeterson.java
     java DoublePeterson
     ```
+    ```
     javac LockDoublePeterson.java
     java LockDoublePeterson
     ```
